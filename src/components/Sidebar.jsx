@@ -6,7 +6,7 @@ function Sidebar() {
   ];
 
   return (
-    <div className="w-72 bg-white border-r h-screen p-4">
+    <div className="w-72 bg-white border-r p-4">
       <h2 className="font-semibold text-lg mb-4">Sessions</h2>
 
       <div className="space-y-2">

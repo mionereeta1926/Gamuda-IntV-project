@@ -1,4 +1,4 @@
-function MessageBubble({ sender, text }) {
+function MessageBubble({ sender, text, agent }) {
   const isUser = sender === "user";
 
   return (
@@ -10,7 +10,10 @@ function MessageBubble({ sender, text }) {
             : "bg-white border text-slate-800"
         }`}
       >
-        {text}
+        <div>{text}</div>
+        {!isUser && agent && (
+          <p className="text-[11px] text-slate-500 mt-2">Agent: {agent}</p>
+        )}
       </div>
     </div>
   );
