@@ -14,7 +14,8 @@ function MessageBubble({ sender, text, agent }) {
             : "bg-white border text-slate-800"
         }`}
       >
-        <div className="whitespace-pre-wrap break-words">
+        {/* Markdown container */}
+        <div className="markdown prose prose-sm max-w-none">
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeRaw]}
