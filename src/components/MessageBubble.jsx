@@ -1,3 +1,6 @@
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
 function MessageBubble({ sender, text, agent }) {
   const isUser = sender === "user";
 
@@ -10,7 +13,9 @@ function MessageBubble({ sender, text, agent }) {
             : "bg-white border text-slate-800"
         }`}
       >
-        <div>{text}</div>
+        <div className="whitespace-pre-wrap break-words">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{text}</ReactMarkdown>
+        </div>
         {!isUser && agent && (
           <p className="text-[11px] text-slate-500 mt-2">Agent: {agent}</p>
         )}
