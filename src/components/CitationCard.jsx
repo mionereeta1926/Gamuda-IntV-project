@@ -1,8 +1,16 @@
-function CitationCard({ source, page }) {
+function CitationCard({ citations = [] }) {
   return (
-    <div className="bg-slate-100 p-3 rounded-xl border">
-      <p className="font-medium text-sm">{source}</p>
-      {/* <p className="text-xs text-slate-500 mt-1">Page {page}</p> */}
+    <div className="bg-slate-100 p-2 rounded-xl border text-[8px] leading-tight">
+      <p className="font-semibold mb-1">
+        Documents referred:
+      </p>
+
+      {citations.map((citation, idx) => (
+        <p key={idx} className="text-slate-700">
+          {idx + 1}. {citation.source}
+          {/* {citation.page && ` (Page ${citation.page})`} */}
+        </p>
+      ))}
     </div>
   );
 }

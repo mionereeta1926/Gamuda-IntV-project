@@ -119,15 +119,9 @@ function ChatWindow() {
               )}
             </div>
 
-            {message.citations && (
-              <div className="ml-2 mb-4 space-y-2">
-                {message.citations.map((citation, idx) => (
-                  <CitationCard
-                    key={idx}
-                    source={citation.source}
-                    page={citation.page}
-                  />
-                ))}
+            {message.citations && message.citations.length > 0 && (
+              <div className="ml-2 mb-4">
+                <CitationCard citations={message.citations} />
               </div>
             )}
           </div>
